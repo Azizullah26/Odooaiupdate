@@ -1,0 +1,60 @@
+version: '3.1'
+intents:
+- goodbye
+- greet
+- wo_ref
+- work_order_details
+- work_order_employees
+- work_order_finances
+- work_order_papers
+- work_order_time
+entities:
+- required
+- wo_ref_no
+slots:
+  wo_ref_no:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: wo_ref_no
+  required:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: required
+responses:
+  utter_hi:
+  - text: hi
+  utter_greet:
+  - text: Hi, how can I help you today?
+  utter_default:
+  - text: I'm sorry, I didn't understand that. Can you rephrase?
+  utter_goodbye:
+  - text: Goodbye! Have a great day!
+  utter_ask_wo_ref_no:
+  - text: Please enter the work order reference
+  utter_run_required:
+  - text: Getting {required} from Odoo right now.
+actions:
+- action_confirm_wo_then_action
+- utter_greet
+- utter_hi
+- action_wo_papers
+- validate_wo_form
+- utter_default
+- action_wo_finances
+- utter_run_required
+- utter_goodbye
+- utter_ask_wo_ref_no
+- action_wo_employees
+- action_wo_time
+- action_wo_details
+forms:
+  wo_form:
+    required_slots:
+    - wo_ref_no
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

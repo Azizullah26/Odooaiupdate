@@ -1,0 +1,74 @@
+version: "3.1"
+rules:
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Fallback when the intent is not recognized
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- rule: Say a greating
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- rule: Ask for WO ref when missing (finances)
+  condition:
+    - slot_was_set:
+        - wo_ref_no: null
+  steps:
+    - intent: work_order_finances
+    - action: wo_form
+    - active_loop: wo_form
+
+- rule: Ask for WO ref when missing (details)
+  condition:
+    - slot_was_set:
+        - wo_ref_no: null
+  steps:
+    - intent: work_order_details
+    - action: wo_form
+    - active_loop: wo_form
+
+- rule: Ask for WO ref when missing (papers)
+  condition:
+    - slot_was_set:
+        - wo_ref_no: null
+  steps:
+    - intent: work_order_papers
+    - action: wo_form
+    - active_loop: wo_form
+
+- rule: Ask for WO ref when missing (time)
+  condition:
+    - slot_was_set:
+        - wo_ref_no: null
+  steps:
+    - intent: work_order_time
+    - action: wo_form
+    - active_loop: wo_form
+
+- rule: Ask for WO ref when missing (employees)
+  condition:
+    - slot_was_set:
+        - wo_ref_no: null
+  steps:
+    - intent: work_order_employees
+    - action: wo_form
+    - active_loop: wo_form
+
+- rule: Submit wo_form
+  condition:
+    - active_loop: wo_form
+  steps:
+    - action: wo_form
+    - active_loop: null
+    - action: action_confirm_wo_then_action
+
+
+

@@ -1,0 +1,162 @@
+version: "3.1"
+stories:
+
+- story: user says a greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: WO finance (cost) → ask for WO when missing → confirm and proceed
+  steps:
+    - intent: work_order_finances
+      entities:
+        - required: "cost"
+    - slot_was_set:
+      - required: cost
+    - action: wo_form
+    - active_loop: wo_form
+    - intent: wo_ref
+      entities:
+        - wo_ref_no: "ABC-999"
+    - action: wo_form
+    - active_loop: null
+
+    - action: action_confirm_wo_then_action
+   
+- story: Ask for WO ref if missing
+  steps:
+    - intent: work_order_finances
+      entities:
+        - required: "expense"
+    - slot_was_set:
+      - required: expense
+    - action: wo_form
+    - active_loop: wo_form
+    - intent: wo_ref
+      entities:
+        - wo_ref_no: "WO-789"
+    - slot_was_set:
+        - wo_ref_no: "WO-789"
+
+    - action: wo_form
+    - active_loop: null
+
+    - action: action_confirm_wo_then_action
+    
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: work_order_finances
+    entities:
+    - required: expense
+    - wo_ref_no: '00185'
+  - slot_was_set:
+    - wo_ref_no: '00185'
+  - slot_was_set:
+    - required: expense
+  - action: utter_run_required
+
+
+- story: interactive_story_2
+  steps:
+  - intent: work_order_details
+    entities:
+    - required: details
+  - slot_was_set:
+    - required: details
+  - action: wo_form
+  - active_loop: wo_form
+  - slot_was_set:
+    - required: details
+  - slot_was_set:
+    - requested_slot: wo_ref_no
+  - intent: wo_ref
+    entities:
+    - wo_ref_no: '00185'
+  - slot_was_set:
+    - wo_ref_no: '00185'
+  - action: wo_form
+  - slot_was_set:
+    - wo_ref_no: '00185'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_confirm_wo_then_action
+
+
+  - intent: work_order_finances
+    entities:
+    - required: distribution
+    - wo_ref_no: 7328-12
+  - slot_was_set:
+    - wo_ref_no: 7328-12
+  - slot_was_set:
+    - required: distribution
+  - action: utter_run_required
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: work_order_papers
+    entities:
+    - required: pos
+    - wo_ref_no: 8121/232
+  - slot_was_set:
+    - wo_ref_no: 8121/232
+  - slot_was_set:
+    - required: pos
+  - action: utter_run_required
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+ 
+  - intent: work_order_employees
+    entities:
+    - required: 'project manager'
+    - wo_ref_no: '00185'
+  - action: wo_form
+  - active_loop: wo_form
+  - slot_was_set:
+    - wo_ref_no: '00185'
+  - slot_was_set:
+    - required: 'project manager'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_confirm_wo_then_action
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: work_order_papers
+    entities:
+    - required: invoice
+  - action: wo_form
+  - active_loop: wo_form
+  - slot_was_set:
+    - required: invoice
+  - slot_was_set:
+    - requested_slot: wo_ref_no
+  - intent: wo_ref
+    entities:
+    - wo_ref_no: 32787:298
+  - slot_was_set:
+    - wo_ref_no: 32787:298
+  - action: wo_form
+  - slot_was_set:
+    - wo_ref_no: 32787:298
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_confirm_wo_then_action

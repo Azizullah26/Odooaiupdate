@@ -1,0 +1,40 @@
+1. Can you give me the details of work order 3267?
+2. I want to see the specifications for work order ABC-999.
+3. What's the description for WO-103?
+4. Show me all info related to order 2023-XYZ.
+
+5. How much did we spend on work order 1057?
+6. Show me the financial breakdown for project ABC-888.
+7. What was the final invoice amount for WO-555?
+8. Total cost of work order ID 3001 please.
+
+9. How long did work order 2018-A1 take to complete?
+10. What was the start and end date for order 5643?
+11. When did project ZXC-900 start and finish?
+12. Duration for WO-888?
+
+13. Can you get me the papers for work order 4222?
+14. I need the paperwork for ABC-111.
+15. Show project documents for WO-600.
+
+16. What is the current status of project 5555?
+17. Show progress of project XYZ.
+18. How far along is work order 7002?
+
+19. Where is work order 4000 located?
+20. In which city is project 4012 being executed?
+21. What is the site location for WO-12?
+
+22. Who is the civil engineer on project 5012?
+23. List electrical engineers working on ABC-900.
+24. Who's assigned to WO-4000?
+25. Show me employees on work order 8900.
+
+26. Generate a summary report for project 9200.
+27. I need a report of all orders from 2024-01-01 to 2024-12-31.
+28. Give me a yearly summary.
+
+29. Show me all active work orders.
+30. What work orders are currently open?
+31. List the existing work orders for this month.
+

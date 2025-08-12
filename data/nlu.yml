@@ -1,0 +1,230 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - good day
+    - good morning
+    - good evening
+    - hey
+    - heya
+    - what's up
+- intent: goodbye
+  examples: |
+    - good bye
+    - bye bye
+    - bye
+    - goodbye
+    - see you
+    - have a good day
+    - exit
+    - quit
+    - leave
+    - stop
+
+# 1 group
+- intent: work_order_details
+  examples: |
+    - What is the [name](required:12) of the work order with number [3432D](wo_ref_no)?
+    - Show me the [details](required:12) of work order [FE33D-33](wo_ref_no).
+    - Work order [324E3-333](wo_ref_no) [details](required:12)?
+    - Are all mandatory [details](required:12) added on work order [13545](wo_ref_no)?
+    - Check if mandatory [data](required:12) is present in WO [1433-11](wo_ref_no)
+    - Tell me about work order [00185](wo_ref_no)
+    - I want [details](required:12) of work order [185](wo_ref_no)
+    - Give me full [info](required:12) for [185](wo_ref_no)
+    - Show all about work order [185](wo_ref_no)
+    - Tell me everything about [185](wo_ref_no)
+    - What is in work order [185](wo_ref_no)
+    - Show summary for work order [185](wo_ref_no)
+    - Work order [185](wo_ref_no) [details](required:12) please
+
+# 6 groups
+- intent: work_order_finances
+  examples: |
+    - What is the [expense](required:1) for work order [3267](wo_ref_no)?
+    - Show me the [cost](required:1) of WO [ABC-999](wo_ref_no)
+    - Give me the [distribution](required:2) of engineering costs for WO [509](wo_ref_no)
+    - How much [petty cash](required:10) has been spent for [WO123](wo_ref_no)?
+    - What's the [cost](required:1) for work order ID [4096](wo_ref_no)?
+    - Project [cost](required:1) for work order [DubaiSchool](wo_ref_no)
+    - Total [expense](required:1) for WO ref [2023-XYZ](wo_ref_no)
+    - Give me the [cost](required:1) of the WO [817](wo_ref_no)
+    - What is the [total spent](required:1) for WO [7000](wo_ref_no)?
+    - Show me the [financial summary](required) for work order [ABC-888](wo_ref_no)
+    - I want the [cost](required:1) only for WO [555](wo_ref_no)
+    - How much [cash](required:1) was used on WO [4001](wo_ref_no)?
+    - What's the [budget](required:1) assigned to work order [301](wo_ref_no)?
+    - what is the [expense](required:1) of wo [7890](wo_ref_no)
+    - how much [cost](required:1) for wo [00185](wo_ref_no)
+    - wo [00185](wo_ref_no) [expense](required:1) tell
+    - plz [cost](required:1) for workorder [00185](wo_ref_no)
+    - whats the [total spend](required:1) for w.o [00185](wo_ref_no)
+    - give me [expnse](required:1) of workorder num [00185](wo_ref_no)
+    - tell [cost](required:1) spent on wo no [00185](wo_ref_no)
+    - [00185](wo_ref_no) [expenses](required:1) pls
+    - What is the [price](required:1) of work order [00185](wo_ref_no)
+    - Show me [expense](required:1) for work order [00185](wo_ref_no)
+    - Work order [00185](wo_ref_no) [cost](required:1) please
+    - How much money for [each engineer](required:2) in work order [7890](wo_ref_no)
+    - Money by [electrical](required:2) engineer in [7890](wo_ref_no)
+    - Money by [mechanical](required:2) engineer in [7890](wo_ref_no)
+    - Cost by [each engineer](required:2) in work order [7890](wo_ref_no)
+    - Show cost for [civil](required:2), [mech](required:2), and [electrical](required:2) in [7890](wo_ref_no)
+    - How much [each engineer](required:2) spend in [7890](wo_ref_no)
+    - Split cost for [each engineer](required:2) in work order [7890](wo_ref_no)
+    - [Engineer wise](required:2) money in [7890](wo_ref_no)
+    - [engineer wise](required:2) expns of wo [7890](wo_ref_no)
+    - how much spend by [electrical](required:5) eng in [7890](wo_ref_no)
+    - [mech](required:2) eng amount for [7890](wo_ref_no)
+    - show me expense [distribute](required:2) by eng type for work order [7890](wo_ref_no)
+    - who [spend](required:2) how much in [7890](wo_ref_no)
+    - [petty cash](required:10) total in wo [7890](wo_ref_no)
+    - [petty cash](required:10) total for work order [185](wo_ref_no)
+    - [petty](required:10) amt in wo no [185](wo_ref_no)
+    - total [petty](required:10) in [185](wo_ref_no)
+    - [petty](required:10) expenses of project [185](wo_ref_no)
+    - How much [petty cash](required:10) for [185](wo_ref_no)
+    - [Petty cash](required:10) total in work order [185](wo_ref_no)
+    - Show [petty cash](required:10) for project [185](wo_ref_no)
+    - What is [petty cash](required:10) for [185](wo_ref_no)
+    - Total [petty](required:10) money for [185](wo_ref_no)
+    - [Petty cash](required:10) used in wo [185](wo_ref_no)
+    - [Petty cash](required:10) amount in [185](wo_ref_no)
+    - Money [petty cash](required:10) for work order [185](wo_ref_no)
+
+# 3 groups
+- intent: work_order_papers
+  examples: |
+    - Are there any [attachments](required:11) for work order [WO-8431](wo_ref_no)?
+    - Show [attachments](required:11) for WO [ABC-572](wo_ref_no)
+    - Give me the [attachments](required:11) in work order [ZXC-908](wo_ref_no)
+    - What are the available [attachments](required:11) for WO [7215](wo_ref_no)?
+    - Are there [PDF](required:11) files in WO [WO-5092](wo_ref_no)?
+    - Total number of [docx](required:11) in WO [1119](wo_ref_no)?
+    - Count of [pdf](required:11) files in WO [ENG-441](wo_ref_no)?
+    - [Attachment](required:11) count for WO [1237](wo_ref_no)?
+    - How many [invoices](required:9) are linked to work order [WOX-302](wo_ref_no)?
+    - Count of [invoices](required:9) for WO [COOL-918](wo_ref_no)?
+    - List [invoices](required:9) for WO [X-682](wo_ref_no)
+    - Do we have any [invoices](required:9) for WO [6571](wo_ref_no)?
+    - How many [purchase orders](required:7) in WO [2023-QZ4](wo_ref_no)?
+    - What [purchase orders](required:7) are available for WO [5107](wo_ref_no)?
+    - List [purchase orders](required:7) under WO [GATEWAY-54](wo_ref_no)
+    - Total [LPO](required:7) files in WO [RAK-660](wo_ref_no)
+    - [LPO](required:7) file count for work order [PROJECT-Z2](wo_ref_no)
+    - How many [LPOs](required:7) were uploaded in WO [KTN-992](wo_ref_no)?
+    - Is there an [LPO](required:7) for work order [P-284](wo_ref_no)?
+    - Count the [LPOs](required:7) in WO [WTR-815](wo_ref_no)
+    - tell me about the [invoices](required:9) of work order [3479](wo_ref_no)
+    - count [lpo](required:7) for [9041](wo_ref_no)
+    - how many [pos](required:7) in wo [XZ-408](wo_ref_no)
+    - number of [lpo](required:7) for workorder [5193](wo_ref_no)
+    - total [pos](required:7) in project [CH-992](wo_ref_no)
+    - list [lpo](required:7) count for [2716](wo_ref_no)
+    - give me [lpo](required:7) qty for wo [YH-349](wo_ref_no)
+    - [lpo](required:7) numbers for w.o [8072](wo_ref_no)
+    - [LNT-390](wo_ref_no) [cost report](required:9) show
+    - project [4582](wo_ref_no) [full cost report](required:9)
+    - total [invoice](required:9) count for [KM-749](wo_ref_no)
+    - how many [bills](required:9) for workorder [2951](wo_ref_no)
+    - [invoice](required:9) list for [5827](wo_ref_no)
+    - all [invoices](required:9) for wo no [PL-830](wo_ref_no)
+    - [attachment](required:11) count for wo [QZ-285](wo_ref_no)
+    - [docs](required:11) for project [1845](wo_ref_no)
+    - how many [files](required:11) in wo [SG-517](wo_ref_no)
+    - [document](required:11) list for work order [MNT-263](wo_ref_no)
+    - [files](required:11) attached to [4932](wo_ref_no)
+    - [attachment](required:11) qty for w.o [7295](wo_ref_no)
+    - show me all [docs](required:11) of [BK-882](wo_ref_no)
+    - How many [LPO](required:7) for work order [MN-326](wo_ref_no)
+    - Number of [LPO](required:7) in [5497](wo_ref_no)
+    - Show [LPO](required:7) count for work order [8421](wo_ref_no)
+    - How many [purchase orders](required:7) for [WL-182](wo_ref_no)
+    - [LPO](required:7) total in work order [KJ-924](wo_ref_no)
+    - [LPO](required:7) list for [XG-530](wo_ref_no) please
+    - Count of [LPO](required:7) for [3971](wo_ref_no)
+    - Tell me [LPO](required:7) number for work order [XD-194](wo_ref_no)
+    - Show [cost report](required:9) for [QR-721](wo_ref_no)
+    - What is [full cost](required:9) for work order [NP-820](wo_ref_no)
+    - Show all [bills](required:9) for [2186](wo_ref_no)
+    - How many [invoices](required:9) for work order [WZ-573](wo_ref_no)
+    - [Bill](required:9) count for [5093](wo_ref_no) please
+    - [Cost](required:9) and [bills](required:9) for work order [YQ-885](wo_ref_no)
+    - Show [invoice](required:9) list for [XN-432](wo_ref_no)
+    - Work order [JG-267](wo_ref_no) [bill](required:9) total
+    - How many [files](required:11) for work order [GH-174](wo_ref_no)
+    - Show [document](required:11) count for [4206](wo_ref_no)
+    - Tell me [file](required:11) number for work order [WK-329](wo_ref_no)
+    - How many [attachments](required:11) for [TS-581](wo_ref_no)
+    - [Document](required:11) list for work order [UJ-440](wo_ref_no)
+    - How many [docs](required:11) for [MO-227](wo_ref_no)
+    - [Files](required:11) in project [FZ-605](wo_ref_no) please
+    - Work order [QB-991](wo_ref_no) [document](required:11) total
+
+# 1 group
+- intent: work_order_time
+  examples: |
+    - What is the [end](required:6) date of work order [RAK-22](wo_ref_no)?
+    - What is the [expiry](required:6) date for WO [X-99](wo_ref_no)?
+    - When is the [end](required:6) date of WO [2023-WX](wo_ref_no)?
+    - What is the [expiry](required:6) date of work order [P-89](wo_ref_no)?
+    - When will WO [TRX-88](wo_ref_no) [expire](required:6)?
+    - When is WO [QW-999](wo_ref_no) set to [end](required:6)?
+    - When does WO [ALN-444](wo_ref_no) [expire](required:6)?
+    - Give me the [expiry](required:6) date of WO [MT-472](wo_ref_no)
+    - wo [LC-981](wo_ref_no) [end date](required:6)
+    - when work order [HD-563](wo_ref_no) [finish](required:6)
+    - tell [expiry date](required:6) for wo no [KP-117](wo_ref_no)
+    - workorder [BZ-842](wo_ref_no) [completion](required:6) date
+    - when will [QJ-209](wo_ref_no) [expire](required:6)
+    - [final](required:6) date for w.o [VG-330](wo_ref_no)
+    - [end](required:6) of [ZT-654](wo_ref_no)
+    - When will work order [MC-518](wo_ref_no) [end](required:6)
+    - What is [end date](required:6) for work order [NR-777](wo_ref_no)
+    - When [finish](required:6) work order [FY-405](wo_ref_no) 
+    - Show [last date](required:6) for work order [XS-291](wo_ref_no)
+    - [End date](required:6) of work order [UL-853](wo_ref_no) please
+    - When does [WT-603](wo_ref_no) [stop](required:6)
+    - [Finish date](required:6) for [ZB-426](wo_ref_no) please
+    - [Last day](required:6) of work order [HV-912](wo_ref_no)
+
+# 1 group 
+- intent: work_order_employees
+  examples: |
+    - Who is the [project manager](required:8) for work order [GT-452](wo_ref_no)?
+    - [Project manager](required:8) of WO [ML-789](wo_ref_no)?
+    - [pm](required:8) of [ZX-210](wo_ref_no)
+    - who [manage](required:8) workorder [KH-573](wo_ref_no)
+    - [project manager](required:8) name for wo [QP-334](wo_ref_no)
+    - [VR-128](wo_ref_no) [manager](required:8) who
+    - who is [incharge](required:8) of workorder [YT-992](wo_ref_no)
+    - wo no [FG-665](wo_ref_no) [lead](required:8) name
+    - [manager](required:8) detail for [SJ-401](wo_ref_no)
+    - Who is [boss](required:8) for work order [LW-753](wo_ref_no)
+    - Who is [project manager](required:8) in [NH-284](wo_ref_no)
+    - Show [manager](required:8) name for work order [CX-870](wo_ref_no)
+    - Who is [in charge](required:8) of [BW-145](wo_ref_no)
+    - [Boss](required:8) name for project [RQ-689](wo_ref_no)
+    - Who runs work order [EV-592](wo_ref_no)
+    - Project [MP-311](wo_ref_no) [manager](required:8) please
+
+
+- intent: wo_ref
+  examples: |
+    - [G-00007](wo_ref_no)
+    - WO [WOC199:133](wo_ref_no)
+    - work order [110/2020](wo_ref_no)
+    - [0000013668](wo_ref_no)
+    - wo [1420240103-25](wo_ref_no)
+    - [WOC147:133](wo_ref_no)
+    - [DWO:11331](wo_ref_no)
+    - ref [ADCDA-2024-17-022](wo_ref_no)
+    - [G-00016](wo_ref_no)
+    - wo [ADCDA/2021/00171](wo_ref_no)
+    - work order [RCC-AA-ESE-2023-035](wo_ref_no)
+    - [ESE 0024 HUWAITEEN SCHOOL](wo_ref_no)
+    - [ESE 0024 AL SHATHA KG SCHOOL](wo_ref_no)
+    - [WR (2023/25)](wo_ref_no)
+    - [32787:298](wo_ref_no)
